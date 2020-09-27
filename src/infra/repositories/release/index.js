@@ -60,13 +60,13 @@ const filterMappings = {
     const date = new Date(moment.utc().format('YYYY-MM-DD'))
     return {
       // with date past today and not null
-      filter: { releaseDate: { [Op.lt]: date, [Op.ne]: null, [Op.ne]: '0000-00-00 00:00:00' } }
+      filter: { releaseDate: { [Op.lt]: date, [Op.ne]: null } }
     }
   },
   coming: (value) => {
     const date = new Date(moment.utc().format('YYYY-MM-DD'))
     return {
-      filter: { releaseDate: { [Op.gte]: date, [Op.ne]: null, [Op.ne]: '0000-00-00 00:00:00' } }
+      filter: { releaseDate: { [Op.gte]: date, [Op.ne]: null } }
     }
   },
   upcoming: (value) => {
