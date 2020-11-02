@@ -8,6 +8,7 @@
     "npm": ">=5"
   },
   "scripts": {
+    "start": "cross-env NODE_PATH=. NODE_ENV=development node index.js",
     "start-dev": "cross-env NODE_PATH=. NODE_ENV=development node index.js",
     "start-staging": "cross-env NODE_PATH=. NODE_ENV=staging node index.js",
     "start-prod": "NODE_PATH=. NODE_ENV=production node index.js",
