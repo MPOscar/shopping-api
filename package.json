@@ -24,9 +24,15 @@
     "migrate:test": "sequelize db:migrate --env test",
     "seed": "cross-env NODE_ENV=development sequelize db:seed:all --seeders-path=./src/infra/sequelize/seeders/development",
     "seed:test": "cross-env NODE_ENV=test sequelize db:seed:all --env test --seeders-path=./src/infra/sequelize/seeders/test",
+    "lint": "standard --verbose | snazzy",
+    "lint:staged": "lint-staged",
     "fresh-install": "rm -rf node_modules && npm cache clean --force && npm install",
     "semantic-release": "semantic-release"
   },
+  "lint-staged": {
+    "*.js": "lint"
+  },
+  "pre-commit": "lint:staged",
   "author": "soldev",
   "license": "ISC",
   "dependencies": {
@@ -58,7 +64,7 @@
     "path": "^0.12.7",
     "pg": "7.4.1",
     "ramda": "0.25.0",
-    "sequelize": "^6.3.5",
+    "sequelize": "4.37.6",
     "sequelize-cli": "^5.4.0",
     "swagger-jsdoc": "1.9.7",
     "tcomb": "3.2.25",
